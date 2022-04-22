@@ -14,7 +14,7 @@ public class AppDbContext : IdentityDbContext<AppUser>
 
     public DbSet<Store> Stores { get; set; } = null!;
 
-    //public DbSet<Book> Books { get; set; } = null!;
+    public DbSet<Book> Books { get; set; } = null!;
 
     //public DbSet<Order> Orders { get; set; } = null!;
 

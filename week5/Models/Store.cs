@@ -13,6 +13,6 @@
 
         public string Slogan { get; set; } = null!;
 
-        //public virtual ICollection<Book> Books { get; set; } = null!;
+        public ICollection<Book> Books { get; set; } = null!;
     }
 }
