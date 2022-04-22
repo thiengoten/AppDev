@@ -5,20 +5,20 @@ using week5.Models;
 
 namespace week5.Data;
 
-public class UserContext : IdentityDbContext<AppUser>
+public class AppDbContext : IdentityDbContext<AppUser>
 {
-    public UserContext(DbContextOptions<UserContext> options)
+    public AppDbContext(DbContextOptions<AppDbContext> options)
         : base(options)
     {
     }
 
-    public DbSet<Store> Stores { get; set; } = null!;
+    //public DbSet<Store> Stores { get; set; } = null!;
 
-    public DbSet<Book> Books { get; set; } = null!;
+    //public DbSet<Book> Books { get; set; } = null!;
 
-    public DbSet<Order> Orders { get; set; } = null!;
+    //public DbSet<Order> Orders { get; set; } = null!;
 
-    public DbSet<OrderDetail> OrderDetails { get; set; } = null!;
+    //public DbSet<OrderDetail> OrderDetails { get; set; } = null!;
 
     protected override void OnModelCreating(ModelBuilder builder)
     {

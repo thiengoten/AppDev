@@ -6,11 +6,11 @@ using week5.Models;
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("UserContextConnection");;
 
-builder.Services.AddDbContext<UserContext>(options =>
+builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(connectionString));;
 
 builder.Services.AddDefaultIdentity<AppUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<UserContext>();;
+    .AddEntityFrameworkStores<AppDbContext>();;
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

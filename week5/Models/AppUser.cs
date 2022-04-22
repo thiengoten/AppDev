@@ -5,10 +5,11 @@ namespace week5.Models;
 
 public class AppUser : IdentityUser
 {
-    public int? StoreId { get; set; }
-    public Store? Store { get; set; }
+    //public int? StoreId { get; set; }
 
-    public virtual ICollection<Order> Orders { get; set; } = null!;
+    //public Store Store { get; set; }
+
+    //public virtual ICollection<Order> Orders { get; set; } = null!;
 
     [Display(Name = "Date of Birth")]
     public DateTime? DoB { get; set; }

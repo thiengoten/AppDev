@@ -1,12 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace week5.Models
+﻿namespace week5.Models
 {
     public class Store
     {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
+
+        //public string UserId { get; set; } = null!;
+
+        //public AppUser User { get; set; } = null!;
 
         public string Name { get; set; } = null!;
 
@@ -14,11 +14,6 @@ namespace week5.Models
 
         public string Slogan { get; set; } = null!;
 
-        public string UserId { get; set; } = null!;
-
-        public AppUser User { get; set; } = null!;
-
-        public virtual ICollection<Book> Books { get; set; } = null!;
-
+        //public virtual ICollection<Book> Books { get; set; } = null!;
     }
 }
