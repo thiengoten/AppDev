@@ -18,7 +18,7 @@ public class AppDbContext : IdentityDbContext<AppUser>
 
     public DbSet<Order> Orders { get; set; } = null!;
 
-    //public DbSet<OrderDetail> OrderDetails { get; set; } = null!;
+    public DbSet<OrderDetail> OrderDetails { get; set; } = null!;
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
@@ -40,18 +40,22 @@ public class AppDbContext : IdentityDbContext<AppUser>
         //    .WithMany(u => u.Orders)
         //    .HasForeignKey(o => o.UserId);
 
-        //builder.Entity<OrderDetail>()
-        //    .HasKey(od => new {od.OrderId, od.BookIsbn});
+        builder.Entity<OrderDetail>()
+            .HasKey(od => new { od.OrderId, od.BookIsbn });
 
-        //builder.Entity<OrderDetail>()
-        //      .HasOne<Order>(od => od.Order)
-        //      .WithMany(or => or.OrderDetails)
-        //      .HasForeignKey(od => od.OrderId);
 
-        //builder.Entity<OrderDetail>()
-        //    .HasOne<Book>(od => od.Book)
-        //    .WithMany(b => b.OrderDetails)
-        //    .HasForeignKey(od => od.BookIsbn);
+
+        builder.Entity<OrderDetail>()
+              .HasOne(od => od.Order)
+              .WithMany(or => or.OrderDetails)
+              .HasForeignKey(od => od.OrderId)
+              .OnDelete(DeleteBehavior.Cascade);
+
+        builder.Entity<OrderDetail>()
+            .HasOne<Book>(od => od.Book)
+            .WithMany(b => b.OrderDetails)
+            .HasForeignKey(od => od.BookIsbn)
+            .OnDelete(DeleteBehavior.Restrict);
 
     }
 }

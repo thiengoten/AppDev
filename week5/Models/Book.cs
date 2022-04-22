@@ -14,7 +14,7 @@ namespace week5.Models
 
         public Store Store { get; set; } = null!;
 
-        //public virtual ICollection<OrderDetail> OrderDetails { get; set; } = null!;
+        public virtual ICollection<OrderDetail> OrderDetails { get; set; } = null!;
 
         [StringLength(50)]
         public string Title { get; set; } = null!;

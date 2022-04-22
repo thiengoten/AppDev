@@ -15,6 +15,6 @@ namespace week5.Models
 
         public double TotalPrice { get; set; }
 
-        //public virtual ICollection<OrderDetail> OrderDetails { get; set; } = null!;
+        public virtual ICollection<OrderDetail> OrderDetails { get; set; } = null!;
     }
 }
