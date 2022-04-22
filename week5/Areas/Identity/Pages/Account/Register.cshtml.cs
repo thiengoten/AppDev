@@ -19,7 +19,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
-using week5.Areas.Identity.Data;
+using week5.Models;
 
 namespace week5.Areas.Identity.Pages.Account
 {

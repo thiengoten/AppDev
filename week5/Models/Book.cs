@@ -1,21 +1,31 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace week5.Models
 {
     public class Book
     {
         [Key]
-        public string Isbn { get; set; }
-        public string Title { get; set; }
-        public int Pages { get; set; }
-        public string Author { get; set; }
-        public string Category { get; set; }
-        public double Price { get; set; }
-        public string Desc { get; set; }
-        public string ImgUrl { get; set; }
-        public int StoreId { get; set; }
-        public Store Store { get; set; }
-        public virtual ICollection<OrderDetail>? OrderDetails { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public string Isbn { get; set; } = null!;
 
+        public int StoreId { get; set; }
+
+        public Store Store { get; set; } = null!;
+
+        public virtual ICollection<OrderDetail> OrderDetails { get; set; } = null!;
+
+        public string Title { get; set; } = null!;
+
+        [Display(Name = "Page Number")]
+        public int PageNum { get; set; }
+
+        public string Author { get; set; } = null!;
+
+        public string Category { get; set; } = null!;
+
+        public double Price { get; set; }
+
+        public string Desciption { get; set; } = null!;        
     }
 }
