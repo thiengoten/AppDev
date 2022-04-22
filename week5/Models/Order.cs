@@ -11,10 +11,10 @@ namespace week5.Models
 
         public AppUser User { get; set; } = null!;
 
-        public DateTime OrderDate { get; set; }
+        public DateTime CreatedDate { get; set; }
 
-        public double Total { get; set; }
+        public double TotalPrice { get; set; }
 
-        public virtual ICollection<OrderDetail> OrderDetails { get; set; } = null!;
+        //public virtual ICollection<OrderDetail> OrderDetails { get; set; } = null!;
     }
 }
