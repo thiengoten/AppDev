@@ -5,9 +5,7 @@ namespace week5.Models;
 
 public class AppUser : IdentityUser
 {
-    //public int? StoreId { get; set; }
-
-    //public Store Store { get; set; }
+    public Store? Store { get; set; }
 
     //public virtual ICollection<Order> Orders { get; set; } = null!;
 
